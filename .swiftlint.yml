@@ -1,0 +1,16 @@
+excluded: Pods
+line_length: 130
+opt_in_rules: # some rules are only opt-in
+  - conditional_returns_on_newline
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - nimble_operator
+  - number_separator
+  - operator_usage_whitespace
+  - private_outlet
+  - redundant_nil_coalescing
+  - switch_case_on_newline
+  - switch_case_on_newline
