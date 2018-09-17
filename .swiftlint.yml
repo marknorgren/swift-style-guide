@@ -1,16 +1,86 @@
-excluded: Pods
-line_length: 130
+included:
+  - DTNLoginKit
+  - GrainMarket
+  - DTNUIKit
+disabled_rules:
+
+warning_threshold: 1
+line_length:
+  warning: 130 # default 120
+  error: 300 # default 200
+trailing_whitespace: 
+  ignores_empty_lines: true
+cyclomatic_complexity:
+  warning: 10 # default 10
+  error: 20 # default 20
+file_length:
+  warning: 400 # default 400
+  error: 3400 # default 1000
+function_body_length:
+  warning: 40 # default 40
+  error: 100 # default 100
+function_parameter_count:
+  warning: 5 # default 5
+  error: 8 # default 8
+type_body_length:
+  warning: 200 # default 200
+  error: 1750 # default 350
+number_separator:
+  minimum_length: 5 # default 0
+identifier_name:
+  excluded:
+    - id
+    - or
+    - at
+    - to
+
 opt_in_rules: # some rules are only opt-in
-  - conditional_returns_on_newline
-  - closure_spacing
-  - empty_count
-  - explicit_init
-  - first_where
-  - force_unwrapping
-  - nimble_operator
-  - number_separator
-  - operator_usage_whitespace
-  - private_outlet
-  - redundant_nil_coalescing
-  - switch_case_on_newline
-  - switch_case_on_newline
+
+  - array_init # Prefer using Array(seq) than seq.map { $0 } to convert a sequence into an Array.
+  - attributes # Attributes should be on their own lines in functions and types, but on the same line as variables and imports.
+  - closure_end_indentation # Closure end should have the same indentation as the line that started it.
+  - closure_spacing # Closure expressions should have a single space inside each brace.
+  - conditional_returns_on_newline # Conditional statements should always return on the next line
+  - contains_over_first_not_nil # Prefer contains over first(where:) != nil
+  - empty_count # Prefer checking isEmpty over comparing count to zero.
+  #- explicit_enum_raw_value # Enums should be explicitly assigned their raw values.
+  - explicit_init # Explicitly calling .init() should be avoided.
+  #- explicit_top_level_acl # Top-level declarations should specify Access Control Level keywords explicitly.
+  #- explicit_type_interface # Properties should have a type interface
+  #- extension_access_modifier # Prefer to use extension access modifiers
+  - fatal_error_message # A fatalError call should have a message.
+  #- file_header # Header comments should be consistent with project patterns.
+  - first_where # Prefer using .first(where:) over .filter { }.first in collections.
+  - force_unwrapping # Force unwrapping should be avoided.
+  #- implicit_return # Prefer implicit returns in closures.
+  #- implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
+  - joined_default_parameter # Discouraged explicit usage of the default separator.
+  - let_var_whitespace # Let and var should be separated from other statements by a blank line.
+  - literal_expression_end_indentation # Array and dictionary literal end should have the same indentation as the line that started it.
+  - multiline_arguments # Arguments should be either on the same line, or one per line.
+  - multiline_parameters # Functions and methods parameters should be either on the same line, or one per line.
+  - nimble_operator # Prefer Nimble operator overloads over free matcher functions.
+  #- no_extension_access_modifier # Prefer not to use extension access modifiers
+  #- no_grouping_extension # Extensions shouldn't be used to group code within the same source file.
+  - number_separator # Underscores should be used as thousand separator in large decimal numbers.
+  #- object_literal # Prefer object literals over image and color inits.
+  - operator_usage_whitespace # Operators should be surrounded by a single whitespace when they are being used.
+  - overridden_super_call # Some overridden methods should always call super
+  - override_in_extension # Extensions shouldn't override declarations.
+  - pattern_matching_keywords # Combine multiple pattern matching bindings by moving keywords out of tuples.
+  - private_action # IBActions should be private.
+  #- private_outlet # IBOutlets should be private to avoid leaking UIKit to higher layers.
+  - prohibited_super_call # Some methods should not call super
+  - quick_discouraged_call # Discouraged call inside 'describe' and/or 'context' block.
+  - quick_discouraged_focused_test # Discouraged focused test. Other tests won't run while this one is focused.
+  - quick_discouraged_pending_test # Discouraged pending test. This test won't run while it's marked as pending.
+  - redundant_nil_coalescing # nil coalescing operator is only evaluated if the lhs is nil, coalescing operator with nil as rhs is redundant
+  - single_test_class # Test files should contain a single QuickSpec or XCTestCase class.
+  - sorted_first_last # Prefer using min() or max() over sorted().first or sorted().last
+  - sorted_imports # Imports should be sorted.
+  #- strict_fileprivate # fileprivate should be avoided.
+  - switch_case_on_newline # Cases inside a switch should always be on a newline
+  - trailing_closure # Trailing closure syntax should be used whenever possible.
+  - unneeded_parentheses_in_closure_argument # Parentheses are not needed when declaring closure arguments.
+  - vertical_parameter_alignment_on_call # Function parameters should be aligned vertically if they're in multiple lines in a method call.
+
